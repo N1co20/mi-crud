@@ -38,11 +38,15 @@ function App() {
 
   return (
     <div className="App">
-      <h1>CRUD con LocalStorage</h1>
-
+      <h1 className="title">CRUD con LocalStorage</h1>
+      
       <Form addOrUpdateItem={addOrUpdateItem} itemToEdit={itemToEdit} />
 
-      <List items={items} deleteItem={deleteItem} editItem={editItem} />
+      <List
+        items={items}
+        deleteItem={deleteItem}
+        editItem={editItem}
+      />
     </div>
   );
 }
