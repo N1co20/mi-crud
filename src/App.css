@@ -131,3 +131,12 @@ body {
   margin-bottom: 20px;
   color: #333;
 }
+
+.completed {
+  text-decoration: line-through;
+  color: gray;
+}
+
+.btn-delete {
+  margin-top: 20px;
+}

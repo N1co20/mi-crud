@@ -1,16 +1,35 @@
 import React from "react";
 
-function Item({ item, deleteItem, editItem }) {
+function Item({ item, deleteItem, editItem, toggleCompleted }) {
   return (
     <li className="item">
-      <span>{item.value}</span>
+      <span
+        style={{
+          textDecoration: item.completed ? "line-through" : "none",
+        }}
+      >
+        {item.value}
+      </span>
 
       <div className="actions">
-        <button className="btn-edit" onClick={() => editItem(item)}>
+        <button
+          className="btn"
+          onClick={() => toggleCompleted(item.id)}
+        >
+          {item.completed ? "Deshacer" : "Completar"}
+        </button>
+
+        <button
+          className="btn-edit"
+          onClick={() => editItem(item)}
+        >
           Editar
         </button>
 
-        <button className="btn-delete" onClick={() => deleteItem(item.id)}>
+        <button
+          className="btn-delete"
+          onClick={() => deleteItem(item.id)}
+        >
           Eliminar
         </button>
       </div>
