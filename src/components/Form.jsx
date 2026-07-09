@@ -14,10 +14,14 @@ function Form({ addOrUpdateItem, itemToEdit }) {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    if (inputValue.trim()) {
-      addOrUpdateItem(inputValue);
-      setInputValue("");
+    
+    if (inputValue.trim() === "") {
+      alert("No puedes agregar un elemento vacío.");
+      return;
     }
+
+    addOrUpdateItem(inputValue.trim());
+    setInputValue("");
   };
 
   return (
@@ -27,6 +31,7 @@ function Form({ addOrUpdateItem, itemToEdit }) {
         type="text"
         value={inputValue}
         onChange={(e) => setInputValue(e.target.value)}
+        placeholder="Ingrese un elemento"
       />
 
       <button className="btn" type="submit">
